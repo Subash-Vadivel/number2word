@@ -107,4 +107,7 @@ textarea{
   background-color:rgb(246, 226, 208);
   border-radius:15px;
   border-color: #2ea44f;
+  display:inline-block;
+  vertical-align:middle;
+  text-align: center;
 }
