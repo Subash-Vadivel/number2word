@@ -6,17 +6,21 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function App() {
-  const [no,setNo]=useState();
+  const [no,setNo]=useState('');
   const [is,setIs]=useState();
   const[us,setUs]=useState();
-  const[to,setTo]=useState();
+  const[to,setTo]=useState("");
   const [lan,setLan]=useState("Tamil");
   const sub=(e)=>{
     setIs(cn2in(no));
     setUs(cn2t(no));
-    const data={
-      
-    }
+    const data=new Object({
+      q:us,
+      target:to,
+      key: "text"
+    })
+    axios.post('https://translation.googleapis.com/language/translate/v2',data).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)})
+
     e.preventDefault();
   }
   return (
