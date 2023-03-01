@@ -10,8 +10,9 @@ function App() {
   const [is,setIs]=useState();
   const[us,setUs]=useState();
   const[to,setTo]=useState('ta');
-  const [lan,setLan]=useState("Tamil");
+  const [lan,setLan]=useState("");
   const [res,setResult]=useState('');
+  const [lanout,setLanout]=useState("Select a language to Convert");
 
   const clicked=(e)=>{
     axios.get('https://translated-mymemory---translation-memory.p.rapidapi.com/get',{
@@ -21,6 +22,7 @@ function App() {
         'X-RapidAPI-Host': 'translated-mymemory---translation-memory.p.rapidapi.com'
       },
   }).then((res)=>{setResult(res.data.matches[0].translation);console.log(res.data.matches[0].translation);}).catch((err)=>{console.log(err)})
+  setLanout(lan)
   e.preventDefault()
   }
   const sub=(e)=>{
@@ -56,7 +58,7 @@ function App() {
           </table><br/>
           <input type="text" placeholder='custom convert' value={lan} onChange={(e)=>{setLan(e.target.val)}}></input>&nbsp;&nbsp;<button className='button-3' onClick={clicked}>Convert</button>
           <br></br><br></br>
-          <span className='float-start special'><b>{lan}:</b></span>
+          <span className='float-start special'><b>{lanout}:</b></span>
           <textarea value={res}></textarea>
          </form>
 
