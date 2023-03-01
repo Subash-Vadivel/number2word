@@ -44,14 +44,14 @@ function App() {
           <span className='float-start special'><b>US Standard:</b></span> <textarea value={us}></textarea><br></br><br></br>
           <table className='mytable' cellPadding={10}>
             <tr>
-              <td >English</td>
-              <td>Tamil</td>
-              <td>Hindi</td>
+              <td onClick={()=>{setLan("Punjabi");setTo("pa")}}>Punjabi</td>
+              <td onClick={()=>{setLan("Tamil");setTo("ta")}}>Tamil</td>
+              <td onClick={()=>{setLan("Hindi");setTo("hi")}}>Hindi</td>
             </tr>
             <tr>
-              <td>Urdu</td>
-              <td>Telugu</td>
-              <td>Malayalam</td>
+              <td onClick={()=>{setLan("Urdu");setTo("ur")}}>Urdu</td>
+              <td onClick={()=>{setLan("Korean");setTo("ko")}}>Telugu</td>
+              <td onClick={()=>{setLan("Malayalam");setTo("ml")}}>Malayalam</td>
             </tr>
           </table><br/>
           <input type="text" placeholder='custom convert' value={lan} onChange={(e)=>{setLan(e.target.val)}}></input>&nbsp;&nbsp;<button className='button-3' onClick={clicked}>Convert</button>
