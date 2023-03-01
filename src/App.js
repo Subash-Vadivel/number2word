@@ -2,7 +2,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { cn2t,cn2in } from './n2w';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useState ,useEffect} from 'react';
+import { useState} from 'react';
 import axios from 'axios';
 
 function App() {
