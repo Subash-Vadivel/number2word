@@ -5,7 +5,7 @@ import './App.css';
 import { cn2t,cn2in } from './n2w';
 import { useState } from 'react';
 import axios from 'axios';
-
+import { dataset } from './code';
 export default function App() {
   const [no,setNo]=useState('');
   const [is,setIs]=useState();
@@ -16,14 +16,22 @@ export default function App() {
   const [lanout,setLanout]=useState("Select a language to Convert");
 
   const clicked=(e)=>{
+    setResult("");
+    if(to===undefined)
+    {
+          setResult("Invalid ...");
+    }
+    else
+    {
     axios.get('https://translated-mymemory---translation-memory.p.rapidapi.com/get',{
       params: {langpair: `en|${to}`, q: us },
       headers: {
         'X-RapidAPI-Key': '01dc308f17msha4ada22f271caa5p1d231fjsn8ba241b34e91',
         'X-RapidAPI-Host': 'translated-mymemory---translation-memory.p.rapidapi.com'
       },
-  }).then((res)=>{setResult(res.data.matches[0].translation);console.log(res.data.matches[0].translation);}).catch((err)=>{console.log(err)})
+  }).then((res)=>{setResult(res.data.matches[0].translation);}).catch((err)=>{console.log(err)})
   setLanout(lan)
+}
   e.preventDefault()
   }
   const sub=(e)=>{
@@ -45,7 +53,7 @@ export default function App() {
                 <label htmlFor="numberInput" className="form-label">
                   Number:
                 </label>
-                <input type="number" value={no} onChange={(e)=>{setNo(e.target.value)}} className="form-control" id="numberInput" />
+                <input type="number" value={no} max="9999999998" min="-9999999996" onChange={(e)=>{setNo(e.target.value)}} className="form-control" id="numberInput" />
                 <center>
                 <button onClick={sub} className='button-3'>Submit</button>
                 </center>
@@ -73,7 +81,7 @@ export default function App() {
                 </thead>
                 <tbody>
                   <tr>
-                  <td onClick={()=>{setLan("de");setTo("German")}}>German</td>
+                  <td onClick={()=>{setLan("German");setTo("ge")}}>German</td>
               <td onClick={()=>{setLan("Russian");setTo("ru")}}>Russian</td>
               <td onClick={()=>{setLan("Spanish");setTo("es")}}>Spanish</td>
                   </tr>
@@ -87,7 +95,7 @@ export default function App() {
                   id="customConvertInput"
                   placeholder="Custom Convert"
                   value={lan}
-                  onChange={(e)=>{setLan(e.target.value)}}
+                  onChange={(e)=>{setLan(e.target.value);setTo(dataset[e.target.value.toLowerCase()]);}}
                 />
               </div>
               <center>
