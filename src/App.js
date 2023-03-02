@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
@@ -35,6 +35,7 @@ export default function App() {
   e.preventDefault()
   }
   const sub=(e)=>{
+  
     if(no>999999999 || no<-999999999)
     {
         setWarning("Please Enter Number Between Range -999999999 to 999999999")
@@ -47,6 +48,9 @@ export default function App() {
     }
     e.preventDefault();
   }
+ 
+
+  const a=Object.keys(dataset).map((val)=><option value={val}>{val}</option>)
 
 
    return (
@@ -79,7 +83,14 @@ export default function App() {
                 </label>
                 <textarea value={us} className="form-control" id="usStandard"></textarea>
               </div>
-              <div className='table-responsive'>
+              <center>
+              <div className="mb-3">
+              <select className='minimal' value={lan} onChange={(e)=>{setLan(e.target.value);setTo(dataset[e.target.value.toLowerCase()])}}>
+              {a}
+              </select>
+             
+              </div> </center>
+              {/* <div className='table-responsive'>
               <table className="table mb-3 mytable">
                 <thead>
                   <tr>
@@ -96,8 +107,8 @@ export default function App() {
                   </tr>
                 </tbody>
               </table>
-              </div>
-              <div className="mb-3">
+              </div> */}
+              {/* <div className="mb-3">
                 <input
                   type="text"
                   className="form-control"
@@ -106,7 +117,7 @@ export default function App() {
                   value={lan}
                   onChange={(e)=>{setLan(e.target.value);setTo(dataset[e.target.value.toLowerCase()]);}}
                 />
-              </div>
+              </div> */}
               <center>
               <button onClick={clicked} className="button-3">
                 Convert
