@@ -53,7 +53,7 @@ export default function App() {
                 <label htmlFor="numberInput" className="form-label">
                   Number:
                 </label>
-                <input type="number" value={no} max="9999999998" min="-9999999996" onChange={(e)=>{setNo(e.target.value)}} className="form-control" id="numberInput" />
+                <input type="number" value={no}  max="999999999" min="-999999999" onChange={(e)=>{setNo(e.target.value)}} className="form-control" id="numberInput" />
                 <center>
                 <button onClick={sub} className='button-3'>Submit</button>
                 </center>
