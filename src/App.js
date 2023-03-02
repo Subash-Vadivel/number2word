@@ -24,7 +24,7 @@ export default function App() {
     else
     {
     axios.get('https://translated-mymemory---translation-memory.p.rapidapi.com/get',{
-      params: {langpair: `en|${to}`, q: us },
+      params: {langpair: `en|${to}`, q: is },
       headers: {
         'X-RapidAPI-Key': '01dc308f17msha4ada22f271caa5p1d231fjsn8ba241b34e91',
         'X-RapidAPI-Host': 'translated-mymemory---translation-memory.p.rapidapi.com'
