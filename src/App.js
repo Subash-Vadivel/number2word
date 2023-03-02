@@ -38,6 +38,7 @@ function App() {
         </Col>
         <Col md={4} sm={3} xs={2}>
         <center>
+          <Container className='container-wrapper'>
 
          <form>
           <span className='float-start'><b>Number:</b></span>
@@ -46,23 +47,23 @@ function App() {
           <span className='float-start special'><b>US Standard:</b></span> <textarea value={us}></textarea><br></br><br></br>
           <table className='mytable' cellPadding={10}>
             <tr>
-              <td onClick={()=>{setLan("Punjabi");setTo("pa")}}>Punjabi</td>
+              <td onClick={()=>{setLan("French");setTo("fr")}}>	French</td>
               <td onClick={()=>{setLan("Tamil");setTo("ta")}}>Tamil</td>
               <td onClick={()=>{setLan("Hindi");setTo("hi")}}>Hindi</td>
             </tr>
             <tr>
-              <td onClick={()=>{setLan("Urdu");setTo("ur")}}>Urdu</td>
-              <td onClick={()=>{setLan("Korean");setTo("ko")}}>Telugu</td>
-              <td onClick={()=>{setLan("Malayalam");setTo("ml")}}>Malayalam</td>
+              <td onClick={()=>{setLan("de");setTo("German")}}>German</td>
+              <td onClick={()=>{setLan("Russian");setTo("ru")}}>Russian</td>
+              <td onClick={()=>{setLan("Spanish");setTo("es")}}>Spanish</td>
             </tr>
           </table><br/>
-          <input type="text" placeholder='custom convert' value={lan} onChange={(e)=>{setLan(e.target.val)}}></input>&nbsp;&nbsp;<button className='button-3' onClick={clicked}>Convert</button>
+          <input type="text" placeholder='Select Language' value={lan} onChange={(e)=>{setLan(e.target.val)}}></input>&nbsp;&nbsp;<button className='button-3' onClick={clicked}>Convert</button>
           <br></br><br></br>
           <span className='float-start special'><b>{lanout}:</b></span>
           <textarea value={res}></textarea>
          </form>
 
-
+         </Container>
         </center>
         </Col>
         <Col md={4} sm={3} xs={2}>
