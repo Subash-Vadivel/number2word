@@ -54,6 +54,15 @@ body
 .viewport-height {
   height: 100vh;
 }
+header{
+  background-color: #298e46;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 25px;
+  font-weight: bold;
+}
 .mytable td{
   width:100px;
   height: 40px;
@@ -61,9 +70,11 @@ body
   border-color: black;
   border-width: 5px;
   text-align: center;
-  background-color: #2ea44f;
-  color: white;
-  border-color: white;
+  /* background-color: #298e46; */
+  background-color:#2ea44f;
+  color:white;
+  border-color:lavender;
+  ;
   border-radius: 15px;
   cursor: pointer;
   font-weight: bold;
