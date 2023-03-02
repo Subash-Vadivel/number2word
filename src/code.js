@@ -1,4 +1,5 @@
 exports.dataset={
+    tamil:"ta",
     arabic:"ar",
     bengali:"bn",
     bulgarian:"bg",
@@ -28,7 +29,6 @@ exports.dataset={
     albanian:"sq",
     serbian:"sr",
     swedish:"sv",
-    tamil:"ta",
     telugu:"te",
     thai:"th",
     turkish:"tr",

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
@@ -50,7 +50,7 @@ export default function App() {
   }
  
 
-  const a=Object.keys(dataset).map((val)=><option value={val}>{val}</option>)
+  const a=Object.keys(dataset).map((val)=><option value={val}>{val.toUpperCase()}</option>)
 
 
    return (
@@ -125,7 +125,7 @@ export default function App() {
               </center>
               <div className="mb-3">
                <br/> <label htmlFor="tamilOutput" className="form-label">
-                  {lanout}
+                  {lanout.toUpperCase()}
                 </label>
                 <textarea className="form-control" id="tamilOutput" value={res}></textarea>
               </div>
