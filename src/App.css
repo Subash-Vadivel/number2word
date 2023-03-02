@@ -191,3 +191,8 @@ textarea{
     justify-content: center;
   }
 }
+.warning
+{
+  text-align: center;
+  color: rgb(227, 7, 7);
+}

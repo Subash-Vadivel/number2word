@@ -14,7 +14,7 @@ export default function App() {
   const [lan,setLan]=useState("");
   const [res,setResult]=useState('');
   const [lanout,setLanout]=useState("Select a language to Convert");
-
+  const [warning,setWarning]=useState("");
   const clicked=(e)=>{
     setResult("");
     if(to===undefined)
@@ -35,8 +35,16 @@ export default function App() {
   e.preventDefault()
   }
   const sub=(e)=>{
+    if(no>999999999 || no<-999999999)
+    {
+        setWarning("Please Enter Number Between Range -999999999 to 999999999")
+    }
+    else
+    {
+      setWarning("");
     setIs(cn2in(no));
     setUs(cn2t(no));
+    }
     e.preventDefault();
   }
 
@@ -53,7 +61,8 @@ export default function App() {
                 <label htmlFor="numberInput" className="form-label">
                   Number:
                 </label>
-                <input type="number" value={no}  max="999999999" min="-999999999" onChange={(e)=>{setNo(e.target.value)}} className="form-control" id="numberInput" />
+                <input type="number" value={no}  onChange={(e)=>{setNo(e.target.value)}} className="form-control" id="numberInput" />
+                <p className='warning'>{warning}</p>
                 <center>
                 <button onClick={sub} className='button-3'>Submit</button>
                 </center>
